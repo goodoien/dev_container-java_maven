@@ -14,10 +14,6 @@ RUN chmod u+x nvim.appimage
 RUN ./nvim.appimage --appimage-extract
 RUN ./squashfs-root/AppRun --version
 RUN ln -s /squashfs-root/AppRun /usr/bin/nvim
-RUN mkdir -p /root/.config/nvim
-# RUN mkdir -p /root/.config/nvim/ftplugin
-COPY neovim/init.lua /root/.config/nvim/init.lua
-# COPY neovim/java.lua /root/.config/nvim/ftplugin/java.lua
 RUN nvim --headless "+Lazy! sync" +qa
 
 WORKDIR /root/repos/

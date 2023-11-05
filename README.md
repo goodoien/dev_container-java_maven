@@ -2,7 +2,11 @@
 
 ## Basic container creation 
 
-This is done with the `compose-dev.yaml` file. This file is used to create a container that can be used for development.  It is not intended to be used for production.  The container is created with the docker desktop dev container section. 
+This is done with the `compose-dev.yaml` file. This file is used to create a container that can be used for development.  It is not intended to be used for production.  The container is created with the docker desktop dev container section.
+
+## NeoVim
+
+The container installs a basic version of NeoVim for quick file editing inside the container. 
 
 ## settings.xml
 

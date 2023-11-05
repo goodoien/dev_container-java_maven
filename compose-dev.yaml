@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  web:
+    entrypoint: 
+      - sleep
+      - infinity
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: java-maven-dev
+    container_name: maven-dev-container
+    ports:
+      - "8500:8500"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://maven_dev:UhU3$154!eE%ZrHr@db/maven_dev_env
+    volumes:
+      - ./repos:/root/repos
+      - ./neovim:/root/.config/nvim
+  db:
+    image: postgres:latest
+    container_name: postgres-container-maven
+    restart: always
+    environment:
+      POSTGRES_USER: maven_dev
+      POSTGRES_PASSWORD: UhU3$154!eE%ZrHr
+      POSTGRES_DB: maven_dev_env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

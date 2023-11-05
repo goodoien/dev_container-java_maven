@@ -1,0 +1,7 @@
+# Sub Repos
+repos/*/*
+
+settings.xml
+
+.vscode/
+.DS_Store

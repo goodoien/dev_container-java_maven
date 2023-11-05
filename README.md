@@ -8,7 +8,7 @@ This is done with the `compose-dev.yaml` file. This file is used to create a con
 
 The `settings.xml` is used to configure the maven settings. The file is copied into the container at `/root/.m2/settings.xml`. The file is configured to use the private GitHub repository packages by adding your Personal Access Token. You will need to create this file and add your token using the following template:
 
-``
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
@@ -45,4 +45,4 @@ The `settings.xml` is used to configure the maven settings. The file is copied i
 
 </settings>
 
-``
+```

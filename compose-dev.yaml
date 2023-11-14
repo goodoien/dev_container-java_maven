@@ -13,21 +13,19 @@ services:
       - "8500:8500"
     depends_on:
       - db
-    environment:
-      - DATABASE_URL=postgres://maven_dev:UhU3$154!eE%ZrHr@db/maven_dev_env
     volumes:
       - ./repos:/root/repos
       - ./neovim:/root/.config/nvim
   db:
-    image: postgres:latest
-    container_name: postgres-container-maven
-    restart: always
+    container_name: mysql-web-container
+    image: mysql:latest
     environment:
-      POSTGRES_USER: maven_dev
-      POSTGRES_PASSWORD: UhU3$154!eE%ZrHr
-      POSTGRES_DB: maven_dev_env
+      MYSQL_DATABASE: web
+      MYSQL_PASSWORD: cuXjR5k*MpQ5GTg@*Ziqr7dwbwCSk%WMJmRK2RKmQj
+      MYSQL_ROOT_PASSWORD: cuXjR5k*MpQ5GTg@*Ziqr7dwbwCSk%WMJmRK2RKmQj
+      MYSQL_USER: mysql_web_usr
+    ports:
+      - 3306
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
+      - ./mysql:/var/lib/mysql
+      - ./tmp:/tmp

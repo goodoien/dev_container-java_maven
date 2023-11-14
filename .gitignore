@@ -1,5 +1,6 @@
 # Sub Repos
 repos/*/*
+mysql/*
 
 settings.xml
 

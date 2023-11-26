@@ -15,7 +15,6 @@ services:
       - db
     volumes:
       - ./repos:/root/repos
-      - ./neovim:/root/.config/nvim
   db:
     container_name: mysql-web-container
     image: mysql:latest

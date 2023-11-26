@@ -6,6 +6,8 @@ COPY settings.xml /usr/share/maven/ref/settings.xml
 COPY settings.xml /root/.m2/settings.xml
 
 # Install and setup NeoVim
+RUN mkdir -p /root/.config/nvim
+COPY ./neovim/init.lua /root/.config/nvim
 RUN apt update && apt upgrade -y
 RUN apt install -y gcc
 RUN apt install -y nodejs npm

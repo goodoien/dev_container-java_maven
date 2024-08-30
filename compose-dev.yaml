@@ -28,3 +28,13 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
       - ./tmp:/tmp
+  maria:
+    container_name: mariadb-web-container
+    image: mariadb:latest
+    environment:
+      MYSQL_DATABASE: web
+      MYSQL_PASSWORD: letmein
+      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_USER: root
+    ports:
+      - 3306

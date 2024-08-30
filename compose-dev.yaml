@@ -1,4 +1,3 @@
-version: '3.9'
 services:
   web:
     entrypoint: 
@@ -17,7 +16,7 @@ services:
       - ./repos:/root/repos
   db:
     container_name: mysql-web-container
-    image: mysql:latest
+    image: mysql:5.7.44
     environment:
       MYSQL_DATABASE: web
       MYSQL_PASSWORD: cuXjR5k*MpQ5GTg@*Ziqr7dwbwCSk%WMJmRK2RKmQj
